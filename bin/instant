@@ -10,7 +10,5 @@ var port = process.argv[2]
 http.createServer(instant(process.cwd())).listen(port, function() {
   var listening = this.address().port
   if (!port) open('http://localhost:'+listening)
-  linger('listening on port ' + listening + ' and waiting for changes', function() {
-    process.exit()
-  })
+  linger('listening on port ' + listening + ' and waiting for changes')
 })
