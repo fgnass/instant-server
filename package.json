@@ -22,6 +22,6 @@
   "dependencies": {
     "linger": "0.0.2",
     "open": "0.0.3",
-    "instant": "0.0.1"
+    "instant": "0.0.2"
   }
 }
