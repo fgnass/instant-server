@@ -1,6 +1,6 @@
 # instant(1)
 
-Spawn a http server in the current directory that instantly reloads
+Spawn a http server in the current directory that instantly notifies
 all connected devices as soon as a HTML, CSS, or JavaScript file is modified.
 
 ![screenshot](http://fgnass.github.io/images/instant.gif)
@@ -22,8 +22,10 @@ If the port is omitted a free random port is used and
 
 ### Features
 
-* Supports all major browsers including mobile devices and IE6
+* Supports all major browsers including Android 2 and IE6
 * No browser plugin required
+* No need to add extra script tags to your HTML pages
+* Incremental CSS updates (no page reload)
 * Uses the [instant middleware](https://npmjs.org/package/instant) under the hood
 
 ## License
