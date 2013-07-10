@@ -1,0 +1,27 @@
+{
+  "name": "instant-server",
+  "version": "1.0.0",
+  "bin": {
+    "instant": "./bin/instant"
+  },
+  "preferGlobal": true,
+  "author": "Felix Gnass <fgnass@gmail.com>",
+  "description": "instant development server with live-reload support",
+  "license": "MIT",
+  "keywords": [
+    "live",
+    "reload",
+    "livereload",
+    "server"
+  ],
+  "homepage": "https://github.com/fgnass/instant-server",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/fgnass/instant-server.git"
+  },
+  "dependencies": {
+    "linger": "0.0.2",
+    "open": "0.0.3",
+    "instant": "0.0.1"
+  }
+}
