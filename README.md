@@ -3,6 +3,8 @@
 Spawn a http server in the current directory that instantly reloads
 all connected devices as soon as a HTML, CSS, or JavaScript file is modified.
 
+![screenshot](http://fgnass.github.io/images/instant.gif)
+
 ### Installation
 
 ```
