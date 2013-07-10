@@ -17,7 +17,8 @@ $ npm install -g instant-server
 $ instant <port>
 ```
 
-If the port is omitted a free random port is used.
+If the port is omitted a free random port is used and
+`http://localhost:<random-port>` is opened in the default browser.
 
 ### Features
 
