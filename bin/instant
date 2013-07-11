@@ -1,13 +1,18 @@
 #!/usr/bin/env node
 
 var instant = require('instant')
-  , http = require('http')
+  , connect = require('connect')
   , linger = require('linger')
   , open = require('open')
 
 var port = process.argv[2]
+var root = process.cwd()
+var app = connect()
 
-http.createServer(instant(process.cwd())).listen(port, function() {
+app
+.use(instant(root))
+.use(connect.directory(root, { icons: true, hidden: true }))
+.listen(port, function() {
   var listening = this.address().port
   if (!port) open('http://localhost:'+listening)
   linger('listening on port ' + listening + ' and waiting for changes')

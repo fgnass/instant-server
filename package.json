@@ -22,6 +22,7 @@
   "dependencies": {
     "linger": "~0.0.3",
     "open": "~0.0.3",
-    "instant": "~0.0.2"
+    "instant": "~0.0.2",
+    "connect": "~2.8.4"
   }
 }
