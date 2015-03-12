@@ -20,6 +20,9 @@ $ instant <port>
 If the port is omitted a free random port is used and
 `http://localhost:<random-port>` is opened in the default browser.
 
+### Options
+* `-q | --quiet`: Hide listening message. If no port is provided, the port will be displayed.
+
 ### Features
 
 * Supports all major browsers including Android 2 and IE6
