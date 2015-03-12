@@ -5,6 +5,7 @@ var instant = require('instant')
   , linger = require('linger')
   , minimist = require('minimist')
   , open = require('open')
+  , serveIndex = require('serve-index')
 
 var argv = minimist(process.argv.slice(2), {
   boolean: 'quiet',
@@ -19,7 +20,7 @@ var app = connect()
 
 app
 .use(instant(root))
-.use(connect.directory(root, { icons: true, hidden: true }))
+.use(serveIndex(root, { icons: true, hidden: true }))
 .listen(port, function() {
   var listening = this.address().port
   if (!port) open('http://localhost:' + listening)

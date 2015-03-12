@@ -20,10 +20,11 @@
     "url": "http://github.com/fgnass/instant-server.git"
   },
   "dependencies": {
-    "connect": "~2.8.4",
-    "instant": "~1.1.0",
+    "connect": "~3.3.4",
+    "instant": "~1.8.0",
     "linger": "~0.0.3",
     "minimist": "^1.1.1",
-    "open": "~0.0.3"
+    "open": "~0.0.3",
+    "serve-index": "^1.6.2"
   }
 }
