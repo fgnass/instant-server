@@ -3,9 +3,17 @@
 var instant = require('instant')
   , connect = require('connect')
   , linger = require('linger')
+  , minimist = require('minimist')
   , open = require('open')
 
-var port = process.argv[2]
+var argv = minimist(process.argv.slice(2), {
+  boolean: 'quiet',
+  alias: {
+    quiet: 'q'
+  }
+})
+
+var port = argv._[0]
 var root = process.cwd()
 var app = connect()
 
@@ -14,6 +22,9 @@ app
 .use(connect.directory(root, { icons: true, hidden: true }))
 .listen(port, function() {
   var listening = this.address().port
-  if (!port) open('http://localhost:'+listening)
+  if (!port) open('http://localhost:' + listening)
+  if (argv.quiet && !port)
+  console.log('listening on port ' + listening + ' and waiting for changes')
+  else if (!argv.quiet)
   linger('listening on port ' + listening + ' and waiting for changes')
 })
