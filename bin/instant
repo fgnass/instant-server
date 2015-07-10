@@ -18,8 +18,10 @@ var port = argv._[0]
 var root = process.cwd()
 var app = connect()
 
+console.log(argv)
+
 app
-.use(instant(root))
+.use(instant({ root: root, delay: argv.delay }))
 .use(serveIndex(root, { icons: true, hidden: true }))
 .listen(port, function() {
   var listening = this.address().port

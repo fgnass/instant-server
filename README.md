@@ -21,7 +21,9 @@ If the port is omitted a free random port is used and
 `http://localhost:<random-port>` is opened in the default browser.
 
 ### Options
+
 * `-q | --quiet`: Hide listening message. If no port is provided, the port will be displayed.
+* `--delay <ms>`: Time to wait before reloading a resource (default is 10).
 
 ### Features
 
