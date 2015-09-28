@@ -1,33 +1,38 @@
 #!/usr/bin/env node
 
-var instant = require('instant')
-  , connect = require('connect')
-  , linger = require('linger')
-  , minimist = require('minimist')
-  , open = require('open')
-  , serveIndex = require('serve-index')
+var connect = require('connect');
+var instant = require('instant');
+var linger = require('linger');
+var minimist = require('minimist');
+var open = require('open');
+var serveIndex = require('serve-index');
 
 var argv = minimist(process.argv.slice(2), {
-  boolean: 'quiet',
+  boolean: ['quiet', 'open'],
   alias: {
+    port: 'p',
+    open: 'o',
     quiet: 'q'
   }
-})
+});
 
-var port = argv._[0]
-var root = process.cwd()
-var app = connect()
+var port = argv.port;
+var root = argv._[0] || process.cwd();
+var app = connect();
 
-console.log(argv)
-
-app
-.use(instant({ root: root, delay: argv.delay }))
+app.use(instant({ root: root, delay: argv.delay }))
 .use(serveIndex(root, { icons: true, hidden: true }))
 .listen(port, function() {
-  var listening = this.address().port
-  if (!port) open('http://localhost:' + listening)
-  if (argv.quiet && !port)
-  console.log('listening on port ' + listening + ' and waiting for changes')
-  else if (!argv.quiet)
-  linger('listening on port ' + listening + ' and waiting for changes')
-})
+  var listening = this.address().port;
+
+  if (argv.open || !port && !argv.quiet) {
+    open('http://localhost:' + listening);
+  }
+
+  if (!argv.quiet) {
+    linger('listening on port ' + listening + ' and waiting for changes');
+  }
+  else if (!port) {
+    console.log('listening on port ' + listening + ' and waiting for changes');
+  }
+});

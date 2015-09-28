@@ -14,20 +14,19 @@ $ npm install -g instant-server
 ### Usage
 
 ```
-$ instant <port>
+$ instant -p <port> [dir]
 ```
-
-If the port is omitted a free random port is used and
-`http://localhost:<random-port>` is opened in the default browser.
 
 ### Options
 
+* `-p | --port`: The port to listen to. If omitted, as free random port will be used.
 * `-q | --quiet`: Hide listening message. If no port is provided, the port will be displayed.
+* `-o | --open`: Open the default browser.
 * `--delay <ms>`: Time to wait before reloading a resource (default is 10).
 
 ### Features
 
-* Supports all major browsers including Android 2 and IE6
+* Supports all major browsers including ancient ones as Android 2 or IE6
 * No browser plugin required
 * No need to add extra script tags to your HTML pages
 * Incremental CSS updates (no page reload)
